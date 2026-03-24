@@ -1,5 +1,5 @@
 
-<!DOCTYPE html>
+DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
@@ -26,6 +26,10 @@
             color: black;
             padding: 30px 20px;
             text-align: center;
+            position: relative;
+        }
+
+        .top-area {
             position: relative;
         }
 
@@ -116,50 +120,44 @@
 
         @media (max-width: 600px) {
 
-            /* NOVO: agrupamento vertical do banner e logos */
+            /* AGRUPA IMAGENS LADO A LADO NO CELULAR */
             .top-area {
                 display: flex;
-                flex-direction: column;
-                align-items: center;
-                position: relative;
-                padding-top: 20px;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center; /* ✅ alinhamento vertical */
+                gap: 10px;
+                padding: 15px 0;
+            }
+
+            /* remove absoluta no mobile */
+            .logo-rfb {
+                position: static;
+                width: 35%;
+                max-width: 130px;
+            }
+
+            .banner-principal {
+                width: 40%;
+                max-width: 160px;
+                margin: 0;
             }
 
             header {
-                padding: 20px 10px;
                 width: 100%;
-                order: 1;
+                text-align: center;
+                padding-top: 0;
             }
 
             header h1 {
-                margin-top: 20px;
                 font-size: 20px;
             }
 
-            /* Banner centralizado no mobile */
-            .banner-principal {  
-                width: 60%;
-                max-width: 300px;
-                margin: 10px auto 0 auto;
-            }
-
-            /* Logo volta ao fluxo normal */
-            .logo-rfb {
-                position: relative;
-                order: 2;
-                margin-top: 10px;
-                width: 40%;
-                max-width: 120px;
-                right: auto;
-                top: auto;
-            }
         }
-
 
         /* -------------------- IMPRESSÃO -------------------- */
 
         @media print {
-
             * {
                 -webkit-print-color-adjust: exact !important;
                 print-color-adjust: exact !important;
@@ -193,15 +191,18 @@
 
 <div class="top-area">
 
-    <header>
-        <img src="Logo20Anos.png" alt="Logo 20 anos do e-Processo" class="banner-principal">
-        <h1>Programação do Seminário – 20 anos do e-Processo</h1>
-        <p>25 e 26 de Maio de 2026</p>
-    </header>
+    <!-- Banner -->
+    <img src="Logo20Anos.png" alt="Logo 20 anos do e-Processo" class="banner-principal">
 
+    <!-- Logo RFB -->
     <img src="Logos.png" class="logo-rfb" alt="Logo Receita Federal">
 
 </div>
+
+<header>
+    <h1>Programação do Seminário – 20 anos do e-Processo</h1>
+    <p>25 e 26 de Maio de 2026</p>
+</header>
 
 
 <section>
