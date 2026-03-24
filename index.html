@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -104,10 +105,10 @@
 
         .banner-principal {  
             display: block;
-            margin: 0 0 20px 0;  /* alinhado à esquerda */
-            width: 40%;          /* tamanho proporcional */
-            max-width: 380px;    /* limite elegante no desktop */
-            min-width: 200px;    /* limite no mobile */
+            margin: 0 0 20px 0;
+            width: 40%;
+            max-width: 380px;
+            min-width: 200px;
             height: auto;
         }
 
@@ -115,33 +116,45 @@
 
         @media (max-width: 600px) {
 
+            /* NOVO: agrupamento vertical do banner e logos */
+            .top-area {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                position: relative;
+                padding-top: 20px;
+            }
+
             header {
                 padding: 20px 10px;
+                width: 100%;
+                order: 1;
             }
 
             header h1 {
-                margin-top: 60px;  /* empurra o título para baixo no celular */
-            }
-
-            h1 {
+                margin-top: 20px;
                 font-size: 20px;
             }
 
-            .logo-rfb {
-                width: 25vw;
-                max-width: 100px;
-                right: 5px;
-                top: 5px;
+            /* Banner centralizado no mobile */
+            .banner-principal {  
+                width: 60%;
+                max-width: 300px;
+                margin: 10px auto 0 auto;
             }
 
-            .banner-principal {  
-                margin-top: 50px;   /* empurra o banner para baixo no celular */
-                width: 60%;         /* mantém proporcional */
-                max-width: 350px;
-                display: block;
-                margin-left: 0;     /* continua alinhado à esquerda *
+            /* Logo volta ao fluxo normal */
+            .logo-rfb {
+                position: relative;
+                order: 2;
+                margin-top: 10px;
+                width: 40%;
+                max-width: 120px;
+                right: auto;
+                top: auto;
             }
         }
+
 
         /* -------------------- IMPRESSÃO -------------------- */
 
@@ -181,19 +194,15 @@
 <div class="top-area">
 
     <header>
-
-        <!-- Imagem principal do evento -->
         <img src="Logo20Anos.png" alt="Logo 20 anos do e-Processo" class="banner-principal">
-
         <h1>Programação do Seminário – 20 anos do e-Processo</h1>
         <p>25 e 26 de Maio de 2026</p>
-
     </header>
 
-    <!-- LOGO DA RFB -->
     <img src="Logos.png" class="logo-rfb" alt="Logo Receita Federal">
 
 </div>
+
 
 <section>
 
