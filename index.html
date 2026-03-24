@@ -105,7 +105,7 @@
         .banner-principal { 
             display: block;
             margin: 0 0 20px 0;  /* alinhado à esquerda */
-            width: 35%;          /* tamanho proporcional */
+            width: 40%;          /* tamanho proporcional */
             max-width: 380px;    /* limite elegante no desktop */
             min-width: 200px;    /* limite no mobile */
             height: auto;
@@ -114,8 +114,13 @@
         /* -------------------- RESPONSIVIDADE -------------------- */
 
         @media (max-width: 600px) {
+
             header {
                 padding: 20px 10px;
+            }
+
+            header h1 {
+                margin-top: 60px;  /* empurra o título para baixo no celular */
             }
 
             h1 {
